@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #020d45;
+    background-image: url("https://images.pexels.com/photos/16956026/pexels-photo-16956026/free-photo-of-close-up-of-green-leaves.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    color: #e5e5e5;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 10px;
+}
+
+.temperature-converter {
+    background: #fff;
+    background-image: url("https://images.pexels.com/photos/16956026/pexels-photo-16956026/free-photo-of-close-up-of-green-leaves.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 25px 45px;
+    min-width: 320px;
+    width: 100%;
+    height: auto;
+    box-shadow: -5px -5px 250px 0px rgba(255, 255, 255, 0.02) inset;
+    backdrop-filter: blur(21px);
+}
+
+.title {
+    color: #77e441;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.result {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.result-heading {
+    color: #a3e3a4;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.celsius-value {
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    transition: all .45s ease;
+}
+
+label {
+    color: #a3e3a4;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+input,select {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    padding: 8px;
+    margin-bottom: 15px;
+    color: #a3e3a4;
+}
+
+input:focus {
+    border: 1px solid #5ae85f;
+}
+
+.degree-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.degree-field {
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+}
+
+option {
+    background: linear-gradient(to bottom, #47e74f, #2be1de);
+    color: #42addb;
+}
+
+#convert-btn {
+    background: linear-gradient(to bottom, #40dc19, #9dcc11);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #f6f6f6;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 12px 80px;
+    transition: all 0.3s ease-in;
+}
+
+#convert-btn:hover {
+    background: linear-gradient(to bottom, #47e74f, #322fda);
+}
+
+/* Add a right margin to each icon */
+.fa {
+    margin-left: -12px;
+    margin-right: 8px;
+}
+
+.loading {
+    display: none;
+}

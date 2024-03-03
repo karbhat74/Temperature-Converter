@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Temperature Converter Website using html, css & JavaScript</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="temperature-converter">
+                <h1 class="title">Temperature Converter</h1>
+                <div class="result">
+                    <span class="result-heading">Result (Celsius)</span>
+                    <h2 class="celsius-value" id="celsius"></h2>
+                </div>
+                <div class="degree-type">
+                    <div class="degree-field">
+                        <label for="degree">Degrees</label>
+                        <input type="number" name="degree" id="degree" />
+                    </div>
+                    <div class="temp-field">
+                        <label for="temp-type">Type</label>
+                        <select name="temperatures" id="temp-type" autocomplete="on">
+                            <option id="fahrenheit" value="fahrenheit">Fahrenheit</option>
+                            <option id="kelvin" value="kelvin">Kelvin</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="convert-btn">Convert</button>
+            </div>
+        </div>
+        <script src="js/app.js"></script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                height: 100vh;
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: center;
+                font:bold 12px Arial, Helvetica, sans-serif;
+                background-color: black;
+            }
+            .clock{
+                border: 1px solid #606060;
+                background-image: url("https://images.pexels.com/photos/16956026/pexels-photo-16956026/free-photo-of-close-up-of-green-leaves.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+                color: white;
+                padding: 10px;
+                border-radius: 30px;
+                background-color: #222222;
+            }
+            #Date{
+                font-size: 20px !important;
+                text-align: center;
+            }
+            .clock ul{
+                list-style: none;
+                display: flex;
+                font-size: 50px;
+                gap: 15px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="clock">
+                <div id="Date">Monday 26 September 2023</div>
+
+                <ul>
+                <li id="hours">05</li>
+                    <li id="point">:</li>
+                    <li id="min">20</li>
+                    <li id="point">:</li>
+                    <li id="sec">30</li>
+                </ul>
+            </div>
+        </div>
+        <script src=""></script>
+        <script>
+
+            function clock(){
+                
+                var monthNames = [ "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December" ];
+                var dayNames= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+
+                var today = new Date();
+
+                document.getElementById('Date').innerHTML = (dayNames[today.getDay()] + " " + today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' +today.getFullYear());
+
+                
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                var day = h<11 ? 'AM': 'PM';
+
+                h = h<10? '0'+h: h;
+                m = m<10? '0'+m: m;
+                s = s<10? '0'+s: s;
+                document.getElementById('hours').innerHTML = h;
+                document.getElementById('min').innerHTML = m;
+                document.getElementById('sec').innerHTML = s;
+
+            }var inter = setInterval(clock,400);
+
+        </script>
+    </body>
+</html>
